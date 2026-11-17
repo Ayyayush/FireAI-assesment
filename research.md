@@ -1,185 +1,145 @@
-
-# Research — Print Job Register
+# Research: PrintDesk — Print Shop Assistant
 
 ## 1. Problem Identification
 
-During my visit to a local printing and stationery shop, I observed that the shop handles different types of work, including printing, photocopying, paper binding and stationery sales.
+Print Mega Mess is a printing and stationery shop located inside the NIT Jamshedpur campus, beside Mega Mess. The shop receives printing and photocopying requests from students through different channels, including WhatsApp, email, and physical documents. Managing the sequence of documents and keeping track of different printing requests can become difficult when multiple customers submit work. Calculating charges for large photocopying jobs, such as an entire book, also requires manually counting pages and calculating the total amount. The shop also needs a convenient way to maintain records of stationery items that require replenishment.
 
-The shopkeeper receives documents through different channels. Some customers send their documents through WhatsApp or email, while others bring physical documents directly to the shop for photocopying.
+## 2. Person Identified
 
-During our conversation, the shopkeeper mentioned that keeping track of which customer sent which document can sometimes become difficult. Documents may also arrive in a different order from the sequence in which they need to be printed. Maintaining accurate page counts for individual jobs is another challenge.
+- **Shop:** Print Mega Mess
+- **Location:** NIT Jamshedpur Campus, beside Mega Mess
+- **Person spoken to:** Aditya
+- **Role:** Shopkeeper
+- **Date of visit:** 17 November 2026
+- **Visit time:** 5:26 PM to 5:45 PM
 
-Apart from this, I considered other possible difficulties in a small stationery and printing shop, such as monitoring product stock and calculating printing charges for different orders.
+## 3. Problems Observed and Discussed
 
-## 2. Problems Identified
+During the visit and conversation with Aditya, the following problems were identified:
 
-### Problem 1: Printing and Photocopy Job Management
+### Problem 1: Managing document sequence
 
-This is the primary problem identified during my conversation with the shopkeeper.
+Customers send documents through WhatsApp and email or bring physical documents to the shop. Keeping track of the order in which requests are received and the sequence in which documents need to be printed can become difficult when several jobs are being handled.
 
-- Documents are received through WhatsApp, email and directly from customers.
-- Multiple documents may arrive at different times.
-- It can become difficult to identify which document belongs to which customer.
-- Documents may need to be printed in a different order from the order in which they were received.
-- Page counts and copy requirements need to be maintained for individual jobs.
-- When multiple customers are waiting, keeping track of pending and completed jobs becomes important.
+### Problem 2: Calculating printing and photocopying charges
 
-**Proposed solution:**
+For large documents, such as an entire book, calculating the total charge requires counting the pages and multiplying them by the applicable rate. This can become time-consuming when the document contains many pages.
 
-A Print Job Register that records incoming printing and photocopying jobs, assigns unique job IDs, maintains customer and document references, records page counts and organizes jobs according to their requested printing sequence.
+The rates shared for the shop were:
 
-### Problem 2: Stationery Stock Monitoring
+- **Printout:** ₹5 per page
+- **Photocopy:** ₹3 per page
 
-The shop also sells stationery products such as pens, erasers and other small accessories.
+### Problem 3: Maintaining stationery records
 
-One possible difficulty in a small stationery business is maintaining an accurate record of available stock. Frequently purchased products may run out unexpectedly, while some products may remain on the shelves for longer periods.
+The shop also sells stationery items. Maintaining a record of available items and identifying which products need replenishment can help the shopkeeper manage stock more conveniently.
 
-**Proposed solution:**
-
-A simple stock monitoring tool that records product quantities, tracks stock movement and identifies products that may need restocking.
-
-This is a potential problem and requires further confirmation from the shopkeeper.
-
-### Problem 3: Printing Cost Calculation
-
-Different printing and photocopying jobs can have different page counts, copy requirements and printing types.
-
-For example, black-and-white and colour printing may have different rates. Calculating the total cost of a larger order can require additional manual effort.
-
-**Proposed solution:**
-
-A printing cost calculator that calculates estimated charges based on page count, number of copies, printing type and the shop's actual rates.
-
-This problem also requires further confirmation.
-
-## 3. Selected Problem
-
-After considering the different possibilities, I decided to focus on printing and photocopy job management.
-
-The main reason is that the shopkeeper specifically mentioned difficulties related to identifying customer documents, maintaining the correct printing sequence and tracking page counts.
-
-Since documents arrive through different channels, there is a need for a common place to register and organize all incoming jobs.
-
-The objective is to develop a simple tool that helps the shopkeeper maintain job records without having to repeatedly search through WhatsApp conversations, emails or physical documents.
-
-## 4. Existing Solutions and Their Limitations
+## 4. Existing Solutions Considered
 
 ### Solution 1: WhatsApp Business
 
-Website: https://whatsappbusiness.com/products/business-app-features/
+WhatsApp Business provides features such as labels for organizing customer conversations and quick replies for frequently used messages.
 
-WhatsApp Business provides features that help small businesses manage customer conversations.
+**Why it may not fully solve this problem:**
 
-Some relevant features include:
-- Labels for organizing customer conversations.
-- Quick replies for frequently asked questions.
-- Customer communication management.
-- Tools for organizing and filtering important messages.
+- It can help organize conversations, but it does not provide a dedicated printing-job register.
+- It does not automatically calculate printing or photocopying charges based on page counts.
+- It does not maintain stationery stock quantities and replenishment thresholds.
+- Requests received through email and physical documents would still need to be recorded separately.
 
-**Why it may not fully fit this requirement:**
-
-WhatsApp Business helps organize customer conversations, but the shopkeeper also receives documents through email and physical visits.
-
-It does not provide one consolidated printing-job register for recording page counts, copy requirements and requested printing sequences across these different channels.
-
-A dedicated job register could provide a common place to maintain these details.
+Source: https://whatsappbusiness.com/products/business-app-features/
 
 ### Solution 2: Google Sheets
 
-Website: https://workspace.google.com/intl/en_in/products/sheets/
+Google Sheets provides spreadsheet functionality, including sorting and filtering records.
 
-Google Sheets is a spreadsheet application that can be used to organize structured records.
+**Why it may not fully solve this problem:**
 
-Some relevant features include:
-- Maintaining customer and document records.
-- Sorting and filtering information.
-- Organizing data into tables.
-- Updating records when job details change.
+- Job information, page counts, customer references, and document sequences would need to be entered and managed manually.
+- The shopkeeper would need to maintain separate formulas and records for different tasks.
+- It does not provide a dedicated job-ticket workflow by default.
+- A simple custom interface could make frequently performed operations easier to access.
 
-**Why it may not fully fit this requirement:**
+Source: https://support.google.com/docs/answer/3540681?hl=en
 
-Although Google Sheets can store printing-job information, the shopkeeper would need to manually create and maintain the required structure.
+## 5. Proposed Solution
 
-A dedicated interface with predefined fields, a pending-job view and printing-sequence management could make the workflow easier to use.
+I propose building **PrintDesk — Print Shop Assistant**, a small application designed around the day-to-day requirements discussed at Print Mega Mess.
 
-## 5. Research Sources
+The application will use Python, Streamlit, Pandas, and CSV files to provide a simple interface for managing printing jobs and stationery records.
 
-### Source 1: WhatsApp Business — Business App Features
+### Planned Features
 
-Link: https://whatsappbusiness.com/products/business-app-features/
+**1. Unified Job Register**
 
-Notes:
-1. The official website describes tools available to businesses for managing customer conversations.
-2. It explains how labels can help organize and filter important customer conversations.
-3. These features are relevant because WhatsApp is one of the channels through which the shopkeeper receives customer documents.
+- Record jobs received through WhatsApp, email, or physical documents.
+- Store customer references and document labels.
+- Maintain the received order of jobs.
+- Record the requested document sequence separately.
 
-### Source 2: Google Sheets — Sort and Filter Data
+**2. Digital Job Ticket**
 
-Link: https://support.google.com/docs/answer/3540681?hl=en
+- Assign a unique job ID to each entry.
+- Store document name, page count, number of copies, and job type.
+- Track the job status.
+- Make it easier to identify and retrieve a particular printing request.
 
-Notes:
-1. The official Google documentation explains how spreadsheet data can be sorted alphabetically or numerically.
-2. It describes how filters can be used to find specific records.
-3. These features can support printing-job records, although a dedicated application would provide a more focused workflow.
+**3. Printing and Photocopy Cost Calculator**
 
-## 6. Proposed Solution
+- Calculate the estimated cost using the number of pages and copies.
+- Use the shop's reported rates:
+  - Printout: ₹5 per page.
+  - Photocopy: ₹3 per page.
+- Display the estimated total before processing a job.
 
-I propose developing a lightweight application called **Print Job Register**.
+**4. Basic Stationery Stock Alerts**
 
-The application will help the shopkeeper:
+- Maintain records of stationery products.
+- Store current quantities and minimum stock levels.
+- Highlight items that need replenishment.
 
-1. Register incoming printing and photocopying jobs.
-2. Record the source of each job: WhatsApp, email or physical document.
-3. Assign a unique job ID to every order.
-4. Associate documents with anonymous customer identifiers.
-5. Maintain document labels and received timestamps.
-6. Record page counts and the number of copies.
-7. Record printing type (Black & White / Colour).
-8. Maintain the requested printing sequence independently of arrival time.
-9. View pending, printing and completed jobs.
-10. Calculate estimated printing charges using actual shop rates, if confirmed as useful.
+## 6. Technology Stack
 
-The application will use a CSV file containing genuine printing-job records collected during fieldwork.
+| Component | Technology |
+|---|---|
+| Programming language | Python |
+| User interface | Streamlit |
+| Data processing | Pandas |
+| Data storage | CSV files |
+| Development environment | VS Code |
 
-The initial version will not require automatic integration with WhatsApp or email. The shopkeeper will manually enter the relevant job details into the application.
+## 7. Data Collection Plan
 
-## 7. Initial Technology and Scope
+The application will use records collected from the actual shop rather than downloaded or generated datasets.
 
-**Proposed technologies:**
-- Python
-- Pandas
-- Streamlit
-- CSV
+The planned job dataset will contain:
 
-**Features included:**
-- Printing and photocopy job registration.
-- Customer and document identification.
-- Source/channel tracking.
-- Page-count and copy tracking.
-- Printing sequence management.
-- Pending and completed job tracking.
-- CSV data validation.
-- Basic printing cost calculation, if verified as useful.
+- Job ID
+- Received time
+- Source channel
+- Customer reference
+- Document label
+- Number of pages
+- Number of copies
+- Print type
+- Requested sequence
+- Job status
+- Rate per page
 
-**Features excluded:**
-- Automatic WhatsApp integration.
-- Automatic email integration.
-- Online payments.
-- GST billing.
-- Full inventory management.
-- Customer-facing portals.
-- Unnecessary business analytics.
+A separate stock dataset will contain stationery product names, current quantities, and minimum stock levels.
 
-## 8. Research Status
+Customer information and document contents will not be stored. Only the minimum information required to demonstrate job management and cost calculation will be used.
 
-- [x] Personally visited a local printing and stationery shop.
-- [x] Identified the printing-document management problem through conversation.
-- [x] Identified the different document-receiving channels.
-- [x] Considered two additional potential problems.
-- [x] Researched two existing solutions.
-- [x] Prepared an initial solution direction.
-- [ ] Verify the shopkeeper's current method of organizing incoming documents.
-- [ ] Confirm how requested printing sequences are maintained.
-- [ ] Verify whether printing-cost calculation is a significant problem.
-- [ ] Collect at least 20 genuine printing and photocopy job records.
-- [ ] Finalize application features based on fieldwork.
+## 8. Project Scope and Limitations
+
+PrintDesk is intended to be a small, practical tool for the identified shopkeeper. It will focus on organizing job records, calculating estimated printing charges, and identifying stationery items that need replenishment.
+
+The initial version will not include automatic WhatsApp or email integration, online payments, OCR, customer accounts, or a full billing system. Job details will be entered manually, and the application will operate using locally stored CSV data.
+
+The application will depend on the accuracy of the information entered. Cost estimates will use the configured per-page rates and may not account for additional services or special printing requirements.
+
+## 9. Research Outcome
+
+The visit helped identify practical administrative tasks in a small campus printing shop. The main opportunity is to reduce manual effort in organizing printing requests and calculating charges, while also providing a basic way to track stationery stock.
+
+PrintDesk will be developed as a focused solution for the workflow discussed with Aditya at Print Mega Mess.
