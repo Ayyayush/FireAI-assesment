@@ -1,5 +1,5 @@
 job_id,received_time,source_channel,customer_label,document_label,pages,copies,print_type,requested_sequence,status,rate_per_page
-JOB001,,WhatsApp,WA-01,EE_GATE2027_Syllabus.pdf,2.0,,,,,
+JOB001,,WhatsApp,WA-01,EE_GATE2027_Syllabus.pdf,2.0,,,,Pending,
 JOB002,,WhatsApp,WA-02,IDF Curve.pdf,1.0,,,,,
 JOB003,,WhatsApp,WA-03,Untitled document.pdf,2.0,,,,,
 JOB004,,WhatsApp,WA-04,akshay block 2 price list (1).pdf,1.0,,,,,
@@ -20,3 +20,4 @@ JOB018,,WhatsApp,WA-18,java_8.pdf,,,,,,
 JOB019,,WhatsApp,WA-19,resume_ib_compressed.pdf,1.0,,,,,
 JOB020,,WhatsApp,WA-20,Ayush_Saraf_CV.pdf,1.0,,,,,
 JOB021,2026-11-17 20:09:51,WhatsApp,Customer2,Lab Assignment,1.0,1.0,Printout,1.0,Pending,5.0
+JOB022,2026-11-18 00:27:04,WhatsApp,CUSTOMER-22,lab-ass,1.0,1.0,Printout,1.0,Pending,5.0
