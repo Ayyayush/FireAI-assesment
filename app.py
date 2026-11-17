@@ -35,7 +35,6 @@ inventory = st.Page("pages/3_Inventory.py", title="Inventory", icon="📦")
 
 
 pages = {"PrintDesk": [dashboard, job_register, billing, inventory]}
-
 navigation = st.navigation(pages)
 
 
