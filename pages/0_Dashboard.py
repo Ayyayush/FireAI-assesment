@@ -4,9 +4,7 @@ import pandas as pd
 from utils.job_manager import get_all_jobs
 from utils.inventory_manager import get_all_stock, get_low_stock_items
 
-# ==================================================
-# 1. CUSTOM CSS
-# ==================================================
+
 
 st.markdown(
     """
@@ -60,18 +58,14 @@ st.markdown(
 )
 
 
-# ==================================================
-# 2. LOAD DATA
-# ==================================================
+
 
 jobs = get_all_jobs()
 stock = get_all_stock()
 low_stock = get_low_stock_items()
 
 
-# ==================================================
-# 3. SIDEBAR DETAILS
-# ==================================================
+
 
 with st.sidebar:
 
@@ -90,9 +84,6 @@ with st.sidebar:
     st.caption("PrintDesk v1.0")
 
 
-# ==================================================
-# 4. DASHBOARD HEADER
-# ==================================================
 
 st.title("🖨️ Print Shop Dashboard")
 
@@ -103,9 +94,7 @@ st.write(
 st.divider()
 
 
-# ==================================================
-# 5. JOB STATISTICS
-# ==================================================
+
 
 total_jobs = len(jobs)
 
@@ -122,9 +111,7 @@ if not jobs.empty:
     completed_jobs = (jobs["status"] == "Completed").sum()
 
 
-# ==================================================
-# 6. DISPLAY JOB METRICS
-# ==================================================
+
 
 st.subheader("Overview")
 
@@ -139,9 +126,7 @@ col3.metric("Processing Jobs", processing_jobs)
 col4.metric("Completed Jobs", completed_jobs)
 
 
-# ==================================================
-# 7. INVENTORY METRICS
-# ==================================================
+
 
 st.write("")
 
@@ -152,9 +137,7 @@ col1.metric("Stationery Products", len(stock))
 col2.metric("Low Stock Alerts", len(low_stock))
 
 
-# ==================================================
-# 8. RECENT PRINTING JOBS
-# ==================================================
+
 
 st.divider()
 
@@ -195,9 +178,6 @@ else:
     )
 
 
-# ==================================================
-# 9. STATIONERY STOCK ALERTS
-# ==================================================
 
 st.divider()
 
@@ -223,9 +203,6 @@ else:
     st.dataframe(low_stock, use_container_width=True, hide_index=True)
 
 
-# ==================================================
-# 10. FOOTER
-# ==================================================
 
 st.divider()
 
